@@ -8,7 +8,7 @@ emp_no. And count the number of swap performed.
 
 void merge_sort();
 void merge();
-
+int count_swap = 0;
 struct Employee
 {
     char employee_name[40];
@@ -29,8 +29,8 @@ int main()
        scanf("%d %s %d" , &emp_array[i].emp_no , &emp_array[i].employee_name , &emp_array[i].emp_salary);
 
     merge_sort(emp_array , 0 , size-1);
-
-    printf("print the employee no , employee name , employee salary  after sorting :");
+    printf("count number of swaps %d", count_swap);
+    printf("\nprint the employee no , employee name , employee salary  after sorting :");
     for(int i=0 ; i<size ; i++)
        printf("\n %d %s %d ",emp_array[i].emp_no,emp_array[i].employee_name , emp_array[i].emp_salary);    
 
@@ -60,19 +60,29 @@ void merge(struct Employee emp_array[], int first , int mid , int last)
     while(i<=mid && j<=last)
     {
         if(emp_array[i].emp_no <= emp_array[j].emp_no)
-           b[k++] = emp_array[i++];
-        else 
+        {
+            b[k++] = emp_array[i++];
+            count_swap++;
+        }   
+        else {
            b[k++] = emp_array[j++];   
+           count_swap++;
+        }
     }
 
     if(i>mid)
     {
-        while(j<=last)
-          b[k++]= emp_array[j++];
+        while(j<=last){
+           b[k++]= emp_array[j++];
+           count_swap++;
+        }
+          
     }
     else{
-        while(i<=mid)
+        while(i<=mid){
            b[k++] = emp_array[i++];
+           count_swap++;
+        }
     }
 
     for( i=first ; i<=last ; i++)

@@ -6,7 +6,7 @@ emp_no. And count the number of swap performed.
 #include<stdio.h>
 void heap_Sort();
 void heapify();
-
+int count_swap = 0;
 struct Employee
 {
     char employee_name[40];
@@ -27,8 +27,8 @@ int main()
        scanf("%d %s %d" , &emp_array[i].emp_no , &emp_array[i].employee_name , &emp_array[i].emp_salary);
 
     heap_Sort(emp_array , size);
-
-    printf("print the employee no , employee name , employee salary  after sorting :");
+     printf("count number of swaps are %d", count_swap);
+    printf("\nprint the employee no , employee name , employee salary  after sorting :");
     for(int i=0 ; i<size ; i++)
        printf("\n %d %s %d ",emp_array[i].emp_no,emp_array[i].employee_name , emp_array[i].emp_salary);    
 
@@ -43,6 +43,8 @@ void swap(struct Employee *emp_array , int x  , int y)
     temp = emp_array[x];
     emp_array[x] = emp_array[y];
     emp_array[y] = temp;
+
+    count_swap++;
 }
 
 void heapify(struct Employee emp_array[], int size, int i)

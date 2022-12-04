@@ -6,7 +6,7 @@ emp_no. And count the number of swap performed.
 
 #include<stdio.h>
 #include <string.h>    
-
+int count_swap = 0;
 struct Employee
 {
     char employee_name[40];
@@ -20,6 +20,8 @@ void swap(struct Employee *emp_array , int x  , int y)
     temp = emp_array[x];
     emp_array[x] = emp_array[y];
     emp_array[y] = temp;
+
+    count_swap++;
 }
 
 void quick_sort(struct Employee emp_array[] , int first , int last)
@@ -54,7 +56,7 @@ void quick_sort(struct Employee emp_array[] , int first , int last)
 }
 int main()
 {
-    int size;
+    int size ;
     printf("enter the size of the array \n");
     scanf("%d",&size);
 
@@ -65,8 +67,10 @@ int main()
        scanf("%d %s %d" , &emp_array[i].emp_no , &emp_array[i].employee_name , &emp_array[i].emp_salary);
 
     quick_sort(emp_array , 0 , size-1);
+    
+    printf("number of swaps are : %d" , count_swap);
 
-    printf("print the employee no , employee name , employee salary  after sorting :");
+    printf("\n print the employee no , employee name , employee salary  after sorting :");
     for(int i=0 ; i<size ; i++)
        printf("\n %d %s %d ",emp_array[i].emp_no,emp_array[i].employee_name , emp_array[i].emp_salary);    
 
