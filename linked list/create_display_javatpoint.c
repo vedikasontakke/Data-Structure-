@@ -2,6 +2,7 @@
 #include <stdlib.h>  
 //Represent a node of singly linked list  
 struct node{  
+    //comment
     int data;  
     struct node *next;  
 };      
