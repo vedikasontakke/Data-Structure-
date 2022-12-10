@@ -20,6 +20,25 @@ void display()
     }
     printf("\n");
 }
+
+
+void delete_speciefic_node(){
+
+     int y ; 
+     struct node *temp = head;
+
+     printf("enter element which you want delete \n");
+     scanf("%d",&y);
+
+    while(temp->data != y)
+       temp = temp->next;
+
+    temp->prev->next = temp->next;
+    temp->next->prev = temp->prev;
+    
+    display();
+}
+
 void delete_last_node()
 {
     struct node *prev = head;
@@ -41,33 +60,27 @@ void delete_first_node()
     printf("first element deleted successfully \n");
     display();
 
-    delete_last_node();
 }
 void insert_element_before_specefic_node()
 {
-    printf("1\n");
    struct node *temp = head;
    struct node *newnode_ = (struct node *)malloc(sizeof(struct node *));
    int y;
-   printf("hello\n");
    printf("enter element before that you want to insert at element : \n");
    scanf("%d" , &y);
 
    printf("enter the element which you want to insert :\n");
    scanf("%d" , &newnode_->data);
-   newnode_->prev = NULL;
-   newnode_->next = NULL;
-   printf("hello 2\n");
+  
    while(temp->data != y)
         temp = temp->next;
 
-   temp->next->prev = newnode_;
-   newnode_->next = temp->next;
-   newnode_->prev = temp;
-   temp->next = newnode_;
-
+    newnode_->prev = temp->prev;
+    temp->prev->next = newnode_;
+    temp->prev = newnode_;
+    newnode_->next = temp;
+  
    display();
-   delete_first_node();
 }
 
 void insert_after_specific_node()
@@ -90,7 +103,6 @@ void insert_after_specific_node()
      newnode->prev = temp;
 
    display();
-   insert_element_before_specefic_node();
 }
 void insert_end()
 {
@@ -109,8 +121,6 @@ void insert_end()
    newnode->prev = temp;
 
    display();
-   insert_after_specific_node();
-
 }
 void insert_begin()
 {
@@ -118,12 +128,10 @@ void insert_begin()
     printf("enter element which you want to insert at begin : \n");
     scanf("%d" , &newnode->data);
 
-   // newnode->prev = NULL;
     newnode->next = head;
     head = newnode;
 
     display();
-    insert_end();
 }
 void addnode(int x)
 { 
@@ -158,10 +166,19 @@ void creation()
     }
 
     display();
-    insert_begin();
+   
 }
+
 
 int main()
 {
     creation();
+    insert_begin();
+    insert_end();
+    insert_after_specific_node();
+    insert_element_before_specefic_node();
+
+    delete_first_node();
+    delete_last_node();
+    delete_speciefic_node();
 }
