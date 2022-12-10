@@ -67,14 +67,13 @@ void insert_before_specific_node()
    scanf("%d" , &y);
 
    printf("enter the ellement which you want to insert :\n");
-      scanf("%d" , &newnode->data);
+   scanf("%d" , &newnode->data);
 
    newnode->next = NULL;
 
    while(current->data != y){
        prev = current;
       current = current->next;
-
    }
       
    newnode->next = current;
