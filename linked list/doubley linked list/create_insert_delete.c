@@ -21,9 +21,7 @@ void display()
     printf("\n");
 }
 
-
 void delete_speciefic_node(){
-
      int y ; 
      struct node *temp = head;
 
