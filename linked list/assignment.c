@@ -19,16 +19,13 @@ struct node
     int data;
     struct node *next;
 };
-
 struct node *head , *temp = NULL;
-
 void display()
 {
    struct node *temp = head;
     
     printf("elements in the linked list are :");
     while(temp != NULL){
-
         printf("%d " ,temp->data);
         temp = temp->next;
     }
@@ -55,7 +52,6 @@ void split(int mid , int size)
     prev->next = NULL;
 
     printf("\nelements of first list are : ");
-
     while (second_list_start <= size)
     {
          printf("%d ", head2->data);
@@ -92,8 +88,6 @@ int creation()
     else 
     {
         printf("enter elements of linked list : ");
-
-    
         for(int i=0 ; i<size ; i++)
        {
           int n;
