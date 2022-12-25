@@ -17,7 +17,7 @@ void insert(int num)
 
    if(root == NULL){
       root = newnode;
-      return 0;
+      return;
    } 
    
    struct node * curr = root;
@@ -42,7 +42,7 @@ void insert(int num)
 
 void inorder()
 {
-   if(root == NULL) return  ;
+   if(root == NULL) return;
 
    inorder(root->left);
    printf("%d ",root->data);
@@ -56,32 +56,23 @@ int main()
    printf("enter the number of element you want to insert :\n");
    scanf("%d",&size);
 
-   
    int element;
    for(int i=0; i<size ; i++)
    {
       printf("enter the %d element : ", i+1);
       scanf("%d", &element);
-      printf("a");
-      if(root == NULL) {
-               printf("d");
 
-         root = insert(root , element);
-      }
-      else {
-         insert(root , element);
-      }   
+      insert(element);
+      
    }
    
    printf("inorder traversal :");
-   inorder(root);
+   inorder();
 
    printf("\nenter a elment which you want to insert :");
    scanf("%d" , &element);
-   insert(root , element); 
+   insert(element); 
 
    printf("\ninorder traversal after inseration :");
-   inorder(finalroot);
-
- 
+   inorder();
 }
