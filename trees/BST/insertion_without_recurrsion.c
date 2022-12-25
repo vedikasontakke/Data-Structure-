@@ -6,15 +6,22 @@ struct node{
     struct node * left;
     struct node * right;
 };
-
+struct node *finalroot;
 struct node * insert(struct node * root , int x)
 {
+          printf("3\n");
+
     struct node* temp = root;
     struct node * newnode = (struct node *)malloc(sizeof(struct node *));
     newnode->data = x;
     newnode->left = newnode->right = NULL;
     // tree is empty;
-    if(root == NULL) return newnode;
+    if(root == NULL)
+    {       
+        printf("c\n");
+        finalroot = newnode;
+        return newnode;
+    } 
     else
     {
          while(root !=  NULL)
@@ -28,23 +35,21 @@ struct node * insert(struct node * root , int x)
                   temp = root;
                   root = root->right;
                 }
-            printf("9\n");
         }
-printf("10\n");
         if(x < temp->data) temp->left = newnode;
        else temp->right = newnode;
-printf("11\n");
+       printf("b\n");
        return newnode;
     }  
 }
 
-void inorder(struct node* root)
+void inorder(struct node* finalroot)
 {
-   if(root == NULL) return  ;
+   if(finalroot == NULL) return  ;
 
-   inorder(root->left);
-   printf("%d ",root->data);
-   inorder(root->right);
+   inorder(finalroot->left);
+   printf("%d ",finalroot->data);
+   inorder(finalroot->right);
 }
 
 int main()
@@ -55,22 +60,32 @@ int main()
    printf("enter the number of element you want to insert :\n");
    scanf("%d",&size);
 
-   printf("enter the %d elements : ", size);
+   
    int element;
    for(int i=0; i<size ; i++)
    {
+      printf("enter the %d element : ", i+1);
       scanf("%d ", &element);
-      if(root == NULL) root = insert(root , element);
-      else insert(root , element);
+      printf("a");
+      if(root == NULL) {
+               printf("d");
+
+         root = insert(root , element);
+      }
+      else {
+         insert(root , element);
+      }
    }
    
    printf("inorder traversal :");
-   inorder(root);
-
+   inorder(finalroot);
+/*
    printf("\nenter a elment which you want to insert :");
    scanf("%d" , &element);
    insert(root , element); 
 
    printf("\ninorder traversal after inseration :");
-   inorder(root);
+   inorder(finalroot);
+*/
+ 
 }
