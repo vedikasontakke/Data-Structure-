@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-// not working 
+
 struct node{
     int data;
     struct node * left;
@@ -35,12 +35,11 @@ void insert(int num)
          curr = curr->right;
       }
    }
-
    if(num < prev->data) prev->left = newnode;
    else prev->right = newnode;
 }
 
-void inorder()
+void inorder(struct node *root)
 {
    if(root == NULL) return;
 
@@ -61,18 +60,16 @@ int main()
    {
       printf("enter the %d element : ", i+1);
       scanf("%d", &element);
-
-      insert(element);
-      
+      insert(element);   
    }
    
    printf("inorder traversal :");
-   inorder();
+   inorder(root);
 
    printf("\nenter a elment which you want to insert :");
    scanf("%d" , &element);
    insert(element); 
 
    printf("\ninorder traversal after inseration :");
-   inorder();
+   inorder(root);
 }
