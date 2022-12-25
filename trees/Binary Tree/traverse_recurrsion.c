@@ -15,7 +15,7 @@ struct node * create()
     printf("enter a data (-1 for no node ):");
     scanf("%d",&x);
 
-    if(x == -1) return ;
+    if(x == -1) return 0;
 
     newnode->data = x;
     printf("enter a left node %d :\n", x);
@@ -27,7 +27,7 @@ struct node * create()
 
 int preorder(struct node *root)
 {
-    if(root == NULL) return ;
+    if(root == NULL) return 0;
 
     printf("%d ", root->data);
     preorder(root->left);
@@ -36,7 +36,7 @@ int preorder(struct node *root)
 
 int inorder(struct node *root)
 {
-    if(root == NULL) return ;
+    if(root == NULL) return 0;
 
     inorder(root->left);
     printf("%d ", root->data);
@@ -45,13 +45,45 @@ int inorder(struct node *root)
 
 int postorder(struct node *root)
 {
-    if(root == NULL) return ;
+    if(root == NULL) return 0 ;
 
     postorder(root->left);
     postorder(root->right);
     printf("%d ",root->data);
 }
+void insert(struct node * root)
+{   
+    int data; 
+    struct node * newnode = (struct node *)malloc(sizeof(struct node));
+    printf("enter a element which you want to insert :");
+    scanf("%d",&data);
+        printf("1\n");
 
+    struct node* temp = root;
+    struct node * prev = root;
+        printf("2\n");
+    newnode->data = data;
+    while(temp != NULL){
+            printf("3\n");
+             prev = temp;
+             temp = temp->left;
+    }     
+     printf("4\n");
+
+    prev->left = newnode;
+    printf("5\n");
+}
+void deleteTree(struct node *root){
+     if(root == NULL)
+        return;
+    deleteTree(root->left);
+    deleteTree(root->right);
+     
+    printf("\nDeleteing Node : %d\n", root->data);
+    free(root);
+     
+    return;
+}
 void main()
 {
    struct node *root;
@@ -66,4 +98,8 @@ void main()
 
    printf("\n post order is :");
    postorder(root);
+
+   deleteTree(root);
+  // insert(root);
+   //inorder(root);
 }

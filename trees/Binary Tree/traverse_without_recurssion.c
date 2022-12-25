@@ -3,13 +3,13 @@
 #define MAX_SIZE 100
 struct Node{
     int data;
-    struct node *left , *right;
+    struct Node *left , *right;
 };
 
 struct Stack{
     int size;
     int top;
-    struct node** array;
+    struct Node** array;
 };
 
 struct Stack* createStack(int size)
@@ -20,7 +20,28 @@ struct Stack* createStack(int size)
     stack->array = (struct Node**)malloc(stack->size * sizeof(struct Node*));
     return stack;
 }
+void insert(struct Node * root)
+{   
+    int data; 
+    struct Node * newnode = (struct Node *)malloc(sizeof(struct Node));
+    printf("enter a element which you want to insert :");
+    scanf("%d",&data);
+        printf("1\n");
 
+    struct Node* temp = root;
+    struct Node * prev = root;
+        printf("2\n");
+    newnode->data = data;
+    while(temp != NULL){
+            printf("3\n");
+             prev = temp;
+             temp = temp->left;
+    }     
+     printf("4\n");
+
+    prev->left = newnode;
+    printf("5\n");
+}
 struct Node * create()
 {
     int data;
@@ -120,9 +141,11 @@ void postorder(struct Node* root)
       printf("%d ",node->data);
    }
 }
+
 int main()
 {
    struct Node *root;
+  // struct Node *delnode;
    root = NULL;
    root = create();
 
@@ -134,5 +157,9 @@ int main()
 
    printf("\ntraverse in postorder :");
    postorder(root);
+
+   insert(root);
+   printf("6\n");
+   inorder(root);
 
 }
