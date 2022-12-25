@@ -7,7 +7,6 @@ struct node{
     struct node * right;
 };
 
-struct node *finalroot;
 struct node * root ;
 
 void insert(int num)
@@ -16,13 +15,13 @@ void insert(int num)
    newnode->data = num;
    newnode->left = newnode->right = NULL;
 
-   if(finalroot == NULL){
-      finalroot = newnode;
+   if(root == NULL){
+      root = newnode;
       return 0;
    } 
    
-   struct node * curr = finalroot;
-   struct node * prev = finalroot;
+   struct node * curr = root;
+   struct node * prev = root;
 
    while(curr != NULL)
    {
@@ -41,13 +40,13 @@ void insert(int num)
    else prev->right = newnode;
 }
 
-void inorder(struct node* finalroot)
+void inorder()
 {
-   if(finalroot == NULL) return  ;
+   if(root == NULL) return  ;
 
-   inorder(finalroot->left);
-   printf("%d ",finalroot->data);
-   inorder(finalroot->right);
+   inorder(root->left);
+   printf("%d ",root->data);
+   inorder(root->right);
 }
 
 int main()
@@ -75,7 +74,7 @@ int main()
    }
    
    printf("inorder traversal :");
-   inorder(finalroot);
+   inorder(root);
 
    printf("\nenter a elment which you want to insert :");
    scanf("%d" , &element);
