@@ -32,9 +32,12 @@ int main()
         {
             char op1 = pop();
             char op2 = pop();
-            push("(" + op2 + *e + op1 + ")");
-            //printf("( %c %e %c ",op2,*e,op1);
+
+             char str[100];
+             sprintf(str, "(%s%c%s)", op2, *e , op1);
+             push(str);
         }
     }
-    printf("%c",pop());
+    printf("%s",pop());
 }
+

@@ -35,10 +35,11 @@ int main()
     printf("\n");
 
     int output_index = 0;
-    strrev(exp);
-    
-    e= exp;
-  while(*e != '\0')
+   strrev(exp);
+    //printf("reverse is " , e );
+      e= exp;
+  
+    while(*e != '\0')
     {
         if(isalnum(*e)) output[output_index++] = *e;
         else if(*e == ')') push(*e);
