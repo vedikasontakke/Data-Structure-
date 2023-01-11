@@ -182,7 +182,6 @@ void creation()
        scanf("%d",&n);
        addnode(n);  
     }
-
     display();
     insert_begin();
 }

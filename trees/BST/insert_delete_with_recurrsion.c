@@ -64,7 +64,7 @@ int main()
 {
    struct node * root;
    root = NULL;
-   int size , element;;
+   int size , element;
    printf("how many nodes should be in a list :");
    scanf("%d",&size);
 
@@ -80,7 +80,7 @@ int main()
    
    printf("inorder traversal :");
    inorder(root);
-     printf("root is -- %d ",root);
+   printf("root is -- %d ",root);
    printf("\nenter a elment which you want to insert :");
    scanf("%d" , &element);
    insert(root , element); 

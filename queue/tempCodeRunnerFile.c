@@ -73,13 +73,13 @@ void dequeue_front()
 
 void dequeue_rear()
 {
-    if(front==-1 && rear==-1) printf("underflow\n");
-    else if(front == rear)
+    if(front == -1 && rear == -1) printf("underflow\n");
+    else if(front == rear )
     {
         // single element in a list
         printf("delelted element is %d ", dequeue[rear]);
         front = rear = -1;
-    }else if (rear == 0)
+    }else if (rear = 0)
     {
         printf("delelted element is %d ", dequeue[rear]);
         rear = SIZE-1;
@@ -115,6 +115,7 @@ void display()
             printf(" %d ",dequeue[i]);
             i = (i+1)%SIZE;
          }
+
          printf(" %d ", dequeue[rear]);
        }
 }

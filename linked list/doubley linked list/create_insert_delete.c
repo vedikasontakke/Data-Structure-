@@ -173,9 +173,8 @@ int main()
     creation();
     insert_begin();
     insert_end();
-    insert_after_specific_node();
-    insert_element_before_specefic_node();
-
+  //insert_after_specific_node();
+  //insert_element_before_specefic_node();
     delete_first_node();
     delete_last_node();
     delete_speciefic_node();
