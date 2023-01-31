@@ -23,7 +23,7 @@ void main()
    int i=0;
 
    printf("enter infix expression : \n");
-   scanf("%s",infix);
+   scanf("%s",&infix);
    printf("infix expression is : %s\n" , infix);
    
    while(infix[i] != '\0')
