@@ -8,7 +8,7 @@ void display();
 
 char stack[25]={'\0'};
 int top = -1;
-char ch;
+//char ch;
 
 int main()
 {
