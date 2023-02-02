@@ -4,57 +4,62 @@
 struct node{
     int data;
     struct node *next;
-};
+}*front = NULL , *rear = NULL;
 
-struct node *front = NULL;
-struct node *rear = NULL;
 void enqueue()
 {
-    int ele;
+     int ele;
     printf("enter a data ");
     scanf("%d",&ele);
     struct node *newnode = (struct node*)malloc(sizeof(struct node ));
     newnode->data = ele;
     newnode->next = NULL;
 
-    if(front == NULL && rear == NULL) 
+    if(front == NULL && rear == NULL)
     {
         front = rear = newnode;
         rear->next = front;
-    }    
-    else
+    }else
     {
-        rear->next = newnode;
-        rear = newnode;
-        newnode->next = front;
+         rear->next = newnode;
+         newnode->next = front;
+         rear = newnode;
     }
 
-    printf("element inserted successfully \n");
+    printf("element inserted is %d\n",ele);
 }
 
 void dequeue()
 {
-    struct node *temp = front;
-    if(front == NULL && rear == NULL) printf("Queue is empty \n");
-    else{
-        front = front ->next;
-        rear->next = front;
-        free(temp);
+   struct node *temp = front;
+   
+   if(front == NULL && rear == NULL) printf("empty\n");
+   else
+   {
+      front = front->next;
+       rear->next = front;
+       
+        printf("delete is %d \n",temp->data);
 
-        printf("data deleted successfully \n");
-    }
+      free(temp);
+   }
+
+   
 }
 
 void display()
 {
-   struct node *temp = front;
+    struct node *temp = front;
+
     if(front == NULL && rear == NULL) printf("Queue is empty \n");
-    else {
-        printf("elements in a list are :\n");
-        do{
-          printf("%d ", temp->data);
-          temp = temp->next;
-        }while(temp!=front);
+    else{
+
+    printf("element in the list are : ");
+    do
+    {
+        printf("%d ",temp->data);
+        temp=temp->next;
+    } while(temp != front);
     }
 }
 

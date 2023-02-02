@@ -12,6 +12,7 @@ void display();
 int queue_array[MAX];
 int rear = - 1;
 int front = - 1;
+
 main()
 {
     int choice;

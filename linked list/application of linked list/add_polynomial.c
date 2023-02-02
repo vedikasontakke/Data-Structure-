@@ -1,3 +1,5 @@
+// 
+
 #include<stdio.h>
 #include <stdlib.h>
 struct Node
@@ -97,9 +99,9 @@ int main()
     for(int i=0; i<p1Sz; i++)
     {
         int coe, expo;
-        printf("Enter Coeficient: %d" , i+1);
+        printf("Enter Coeficient %d : " , i+1);
         scanf("%d",&coe);
-        printf("Enter Exponent: %d", i+1);
+        printf("Enter Exponent %d : ", i+1);
         scanf("%d",&expo);
                       
         p1 = addNode(p1,coe,expo);
@@ -109,9 +111,9 @@ int main()
     for(int i=0; i<p2Sz; i++)
     {
         int coe, expo;
-        printf("Enter Coeficient: %d" , i+1);
+        printf("Enter Coeficient %d : " , i+1);
         scanf("%d",&coe);
-        printf("Enter Exponent: %d" , i+1);
+        printf("Enter Exponent %d : " , i+1);
         scanf("%d",&expo);
 
         p2 = addNode(p2,coe,expo);

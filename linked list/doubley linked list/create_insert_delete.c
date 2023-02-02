@@ -106,7 +106,7 @@ void insert_end()
 {
     struct node *temp = head;
 
-    struct node *newnode = (struct node *)malloc(sizeof(struct node *));
+    struct node *newnode = (struct node *)malloc(sizeof(struct node ));
 
    printf("enter element which you want to insert at end : \n");
    scanf("%d" , &newnode->data);

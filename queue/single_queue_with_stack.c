@@ -2,7 +2,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define N 5
-//defining s1 , s2 for array and the top1 , top2 are for top pointer of the stack and count is used for the counting the element.
+//defining s1 , s2 for array and the top1 , top2 are for top pointer of the stack 
+//and count is used for the counting the element.
+
 int s1[N];
 int s2[N];
 int top1 = -1;
