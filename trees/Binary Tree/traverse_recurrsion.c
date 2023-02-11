@@ -99,7 +99,7 @@ void main()
    printf("\n post order is :");
    postorder(root);
 
-   deleteTree(root);
-  // insert(root);
-   //inorder(root);
+   // deleteTree(root);
+    insert(root);
+    inorder(root);
 }

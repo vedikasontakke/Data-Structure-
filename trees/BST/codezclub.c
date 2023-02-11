@@ -90,7 +90,7 @@ struct node *insert_nrec(struct node *root, int ikey)
                         return root;
                 }
         }
-
+        
         tmp=(struct node *)malloc(sizeof(struct node));
         tmp->info=ikey;
         tmp->lchild=NULL;

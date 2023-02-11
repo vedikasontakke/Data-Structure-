@@ -26,7 +26,7 @@ struct node * insert(struct node * root , int key)
     else if (key > root->data) root->right = insert(root->right , key);
     return root;
     }
-};
+}
 struct node *inOrderPredecessor(struct node* root){
     root = root->left;
     while (root->right!=NULL)
@@ -60,6 +60,7 @@ struct node* deleteNode(struct node* root , int element)
    //return first element's address;
     return root;
 }
+
 int main()
 {
    struct node * root;
