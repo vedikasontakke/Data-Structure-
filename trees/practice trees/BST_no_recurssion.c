@@ -100,6 +100,7 @@ struct node * pop(struct stack *stack)
     if(isEMTPY(stack)) return 0;
     else return stack->array[stack->top--];
 }
+
 void inorder(struct node *root)
 {
         if(root == NULL) return ;

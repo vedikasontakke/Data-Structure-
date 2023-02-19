@@ -11,7 +11,7 @@ void enqueue()
    printf("enter a element :");
    scanf("%d",&add_item);
 
-   if((front == -1 && rear == SIZE-1) || (front == rear +1)) printf("overflow \n");
+   if((front == 0 && rear == SIZE-1) || (front == rear +1)) printf("overflow \n");
    else
    {
      if(front == -1) front = 0;

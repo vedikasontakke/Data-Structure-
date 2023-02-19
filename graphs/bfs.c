@@ -44,29 +44,27 @@ int main()
     q.arr = (int*)malloc(q.size*sizeof(int));
 
     int node;
-    int i=1;        // root element which will be visted first;
+    int i=0;        // root element which will be visted first;
     int visted[7] = {0 , 0 , 0 , 0 , 0 , 0 , 0};
 
-    int a[7][7] = {
-        {0,1,1,1,0,0,0},
-        {1,0,1,0,0,0,0},
-        {1,1,0,1,1,0,0},
-        {1,0,1,0,1,0,0},
-        {0,0,1,1,0,1,1},
-        {0,0,0,0,1,0,0}, 
-        {0,0,0,0,1,0,0} 
+    int a[4][4] = {
+    
+        {0,1,0,0},
+        {1,0,1,1},
+        {0,1,0,1},
+        {0,1,2,0}
     };
 
     printf("%d ",i);
-
     visted[i] = 1;
     enqueue(&q , i); // insert 1st elemnt that is root element 
     while(!isEmpty(&q))
     {
        int node = dequeue(&q);
 
-       for(int i=0 ; i<7 ; i++)
+       for(int i=0 ; i<4 ; i++)
        {
+
          if(a[node][i]==1 && visted[i]==0)
          {
             printf("%d ",i);

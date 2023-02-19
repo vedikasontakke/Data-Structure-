@@ -80,7 +80,6 @@ struct node* deleteNode(struct node * root , int element)
    //5return root;
 }
 
-
 struct node* deleteNode(struct node* root, int key)
 {
     struct node* curr = root;

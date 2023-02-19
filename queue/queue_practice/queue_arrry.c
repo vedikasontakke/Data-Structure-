@@ -18,7 +18,7 @@ int main()
     printf("2.Delete element from queue \n");
     printf("3.Display all elements of queue \n");
     printf("4.Quit \n");
-
+ 
     while(1)
     {
         printf("enter your choice : ");

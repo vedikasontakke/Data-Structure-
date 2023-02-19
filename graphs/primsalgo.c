@@ -28,7 +28,12 @@ int main() {
   int min_cost = 0; 
 
   // set selected false initially
-  memset(selected, false, sizeof(selected));
+ // memset(selected, false, sizeof(selected));
+
+   for(int i=0 ; i<V ; i++)
+   {
+     selected[i] = 0;
+   }
   
   // set number of edge to 0
   no_edge = 0;
@@ -38,7 +43,7 @@ int main() {
   //graph
 
   // choose 0th vertex and make it true
-  selected[0] = true;
+  selected[0] = 1;
 
   int x;  //  row number
   int y;  //  col number
@@ -75,9 +80,9 @@ int main() {
          }
       }
     }
-    printf("%d - %d : %d\n", x, y, G[x][y]);
-    min_cost = min_cost + G[x][y];
-    selected[y] = true;
+    printf("%d - %d : %d\n", x, y, min);
+    min_cost = min_cost + min;
+    selected[y] = 1;
     no_edge++;
   }
 

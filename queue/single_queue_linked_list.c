@@ -34,6 +34,7 @@ void main()
       }
    }
 }
+
 void insert(int value)
 {
    struct Node *newNode;

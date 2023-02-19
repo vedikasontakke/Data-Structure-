@@ -157,7 +157,7 @@ void mirror(struct node *root)
 
 int height(struct node *root)
 {
-    if(!root) return "hello";
+    if(!root) return 0;
     else
     {
         int left_height = height(root->left);
@@ -199,7 +199,7 @@ int main()
                      break;
 
            case 3 :   printf("\nnenter element : \n");
-                     scanf("%d",&element);
+        a             scanf("%d",&element);
                      struct node *del = delete(root , element);
                      printf("\nelement deleted %d \n",element);
                      break;

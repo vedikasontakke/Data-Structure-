@@ -1,8 +1,10 @@
+// working 
+
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
  
-int i, j, k, a, b, u, v, n, ne = 1;
+int i, j, k, a, b, u, v, no_vertex, no_edges = 1;
 int min, mincost = 0, cost[9][9], parent[9];
  
 int find(int);
@@ -14,12 +16,12 @@ void main()
   printf("========================\n");
  
   printf("Enter the no. of vertices:\n");
-  scanf("%d", &n);
+  scanf("%d", &no_vertex);
  
   printf("\nEnter the cost adjacency matrix:\n");
-  for (i = 1; i <= n; i++)
+  for (i = 1; i <= no_vertex; i++)
   {
-    for (j = 1; j <= n; j++)
+    for (j = 1; j <= no_vertex; j++)
     {
       scanf("%d", &cost[i][j]);
       if (cost[i][j] == 0)
@@ -28,11 +30,11 @@ void main()
   }
  
   printf("The edges of Minimum Cost Spanning Tree are\n");
-  while (ne < n)
+  while (no_edges < no_vertex)
   {
-    for (i = 1, min = 999; i <= n; i++)
+    for (i = 1, min = 999; i <= no_vertex; i++)
     {
-      for (j = 1; j <= n; j++)
+      for (j = 1; j <= no_vertex ; j++)
       {
         if (cost[i][j] < min)
         {
@@ -45,10 +47,13 @@ void main()
  
     u = find(u);
     v = find(v);
+  //  printf(" u : %d",u);
+  // printf(" v : %d",v);
+
  
     if (uni(u, v))
     {
-      printf("%d edge (%d,%d) =%d\n", ne++, a, b, min);
+      printf("%d edge (%d,%d) =%d\n", no_edges++, a, b, min);
       mincost += min;
     }
  
@@ -56,11 +61,12 @@ void main()
   }
  
   printf("\nMinimum cost = %d\n", mincost);
-  getch();
+  //getch();
 }
  
 int find(int i)
 {
+ // printf("%d parents[i]", parent[i]);
   while (parent[i])
     i = parent[i];
   return i;
@@ -68,6 +74,7 @@ int find(int i)
  
 int uni(int i, int j)
 {
+ // printf(" parent[j] %d ", parent[j]);
   if (i != j)
   {
     parent[j] = i;

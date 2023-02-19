@@ -101,6 +101,7 @@ void inorder(struct Node *root)
         node = node->right;
     }
 }
+
 void preorder(struct Node *root)
 {
     if(root == NULL) return ;
@@ -117,6 +118,7 @@ void preorder(struct Node *root)
         if(node->left) push(s1 , node->left);
     }
 }
+
 void postorder(struct Node* root)
 {
    if(root == NULL) return;

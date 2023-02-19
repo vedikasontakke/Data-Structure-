@@ -45,6 +45,7 @@ void heapify(int arr[], int N, int i)
         printf("%d ", arr[i]);
     printf("\n");
 }
+
  int main()
 {
     int arr[] = { 12, 11, 13, 5, 6, 7 };
