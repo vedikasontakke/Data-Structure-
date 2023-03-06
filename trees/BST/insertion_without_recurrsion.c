@@ -123,6 +123,7 @@ struct node* deleteNode(struct node* root, int key)
             temp = temp->left;
         }
  
+ 
         if (p != NULL) p->left = temp->right;
         else curr->right = temp->right;
         curr->data = temp->data;
