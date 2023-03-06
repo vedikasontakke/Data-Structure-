@@ -1,5 +1,5 @@
 // Adjacency Matrix representation in C
-
+// dummy comment 
 #include <stdio.h>
 #define V 5
 
