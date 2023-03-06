@@ -1,4 +1,4 @@
-// 
+// add polynimial 
 
 #include<stdio.h>
 #include <stdlib.h>
